@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "850764076593",
+    "firebase_url": "https://sathguru-d1712.firebaseio.com",
+    "project_id": "sathguru-d1712",
+    "storage_bucket": "sathguru-d1712.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:850764076593:android:3f03a84aa3de3b9d",
+        "android_client_info": {
+          "package_name": "com.karthi.sathguru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "850764076593-o0ht567jog1rigmpm0p9tu8jb51lb96u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.karthi.sathguru",
+            "certificate_hash": "483e0b7b881547aea5b52edefcc1928d55a41e18"
+          }
+        },
+        {
+          "client_id": "850764076593-eobe5d3343gjvd3fjv4bd2522b3jl1sn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCusZags5c6CXwVxDVfGqwESSfoGUUicGY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "850764076593-eobe5d3343gjvd3fjv4bd2522b3jl1sn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

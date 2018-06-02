@@ -1,0 +1,1537 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bgg"
+    tools:context="com.karthi.sathguru.TrainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="5dp"
+            android:layout_margin="3dp">
+            <LinearLayout
+                android:id="@+id/linear"
+                android:onClick="showD"
+                android:clickable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:fontFamily="sans-serif"
+                    android:text="Select an Package"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:onClick="showD"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_action_send"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shirdi"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:elevation="5dp"
+            android:visibility="visible"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:textColor="#000"
+                    android:text="Shirdi Train Packages From Chennai - 4 Days"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                        <!--android:layout_weight="3"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Day 01:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Departure from Chennai Central Railway station "/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="- Train No.11028 by Mumbai mail at 10:50PM."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                        <!--android:layout_weight="3"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Day 02:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:layout_width="match_parent"
+                                android:fontFamily="sans-serif-condensed"
+                                android:layout_height="wrap_content"
+                                android:textSize="20sp"
+                                android:text="Reaching Pune Railway station. Drive to Devgut (Dattatreyar)"/>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                        <!--android:layout_weight="3"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Day 03:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Reaching Devgut at early morning 4.00a.m."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:text="After refreshment having the dharshan of Dattatreyar temple, Shanisingnapur and RenukadeviTemple."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="And drive to Shirdi. And refreshment at hotel."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Evening 4.00pm dharshan of Sai Baba and visit of Gurusthan, Museum and Lendi Garden.Night halt at Shirdi."/>
+
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                        <!--android:layout_weight="3"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Day 04:"/>-->
+
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Morning Kakkad Aarti/Dharshan visit Dwarakamai and Chavadi."/>
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Starting from shirdi at 2.00pm and drive to Mahaganapathi Temple."/>
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Having the Dharshan of Mahaganapathi and drive to Pune Railway station at night 11.00pm."/>
+
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                        <!--android:layout_weight="3"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Day 05:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="3dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Train Journey"/>
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                        <!--android:layout_weight="3"-->
+                        <!--android:layout_gravity="center_horizontal"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="Day 06:"/>-->
+
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Arrival at Chennai central Railway station at 5.00am."/>
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <Button
+                    android:onClick="about"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    style="?android:textAppearanceSmall"
+                    android:background="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact us"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:elevation="5dp"
+            android:visibility="gone"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="3dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Shirdi Mantralayam Train Packages From Chennai - 5 Days"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp2"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 01:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker213"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Departure from Chennai Central Railway station by "/>
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="train No.11028 at 10:50PM."/>
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 02:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker1efr"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Reach Pune Railway Staion. Drive to Devgut."/>
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 03:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker1dcd"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Reaching devgut at early morning 4.00 a.m."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="After refreshment having the dharshan of \nDattatreyar Temple, \nShanisingnapur and \nRenukadevi temple."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="And drive to Shirdi and refreshment at Hotel."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Evening 4.00p.m dharshan of SaiBaba and visit Gurusthan, Museum and Lendi Garden. \nNight halt at Shirdi."/>
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 04:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker1edea"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Morning Kakkad Aarti /Dharshan and visit Dwarakamai and Chavadi."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Starting from shirdi at 2.00pm and drive to Mahaganapathi Temple."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Having the Dharshan of Mahaganapathi."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Evening drive to Mantralayam."/>
+
+                            </LinearLayout>
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 05:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker1sv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Reaching Mantralayam at evening."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Free time of religious activities."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Night halt at Mantralayam."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 06:"/>-->
+
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker1sdc"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Morning dharshan of Ragavendra Temple."/>
+
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Evening 3.30 p.m train from Mantralayam by Chennai Mail."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 07:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker1aed"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Reaching Chennai central Railway Station at 5.00a.m."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <Button
+                    android:onClick="about"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    style="?android:textAppearanceSmall"
+                    android:background="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact us"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:elevation="5dp"
+            android:visibility="gone"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Shirdi Train/Flight Package From Chennai - 3 Days"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp8"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 01:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker213k"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Departure from Chennai Central Railway station - Train No.11028 by Mumbai mail at 10:50 p.m."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Train No.11028 by Mumbai mail at 10:50 p.m."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 02:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_markerl13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Reaching Pune Railway station.at 11.30 p.m."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Bus/Cab will start at Pune railway station by 11.45 p.m. and reaching Shirdi at 05.00 a.m."/>
+
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 03:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker2j3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Refreshment at hotel for 2 hours."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Morning darshan of Saibaba Temple and other places of \nGurusthan, \nDwarakamai, \nSai Museum, Chavadi, \nLendi Garden."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Night Halt at Shirdi."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 04:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker2jhj13k"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Morning darshan / Kakada Aarti of Saibaba Temple."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Starting from Shirdi at 9.00 a.m and on the way visiting \nShanisignapoor, \nRenuka Devi and \nMaha Ganapathi Temple."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Reaching Pune Airport by 9.00 p.m. Boarding Flight at Pune Airport by 11.50 p.m."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Reaching Chennai at 01.30 a.m."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Note:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker2130o"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Note: \nTransportation by Non A/C bus as per seat in coach basis."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="One night stay at Shirdi in Non A/C room."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="All sightseeing and excursion as per the itinerary."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Senior citizen must bring Original ID Proof at the time of travel."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+
+                </LinearLayout>
+                <Button
+                    android:onClick="about"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    style="?android:textAppearanceSmall"
+                    android:background="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact us"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:elevation="5dp"
+            android:visibility="gone"
+            android:focusable="true"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:layout_margin="3dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Shirdi Train Package From Coimbatore/Salem - 5 day"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp16"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 01:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker21lkk"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Departure from Coimbatore Railway station -"/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Train No.11014 by Lokmanya TT Express at morning 8:55 a.m."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 02:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker20k3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Reaching Pune Railway station at 11.00a.m. and drive to Shirdi."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Reaching at 4.00p.m. Evening having darshan of Saibaba Temple and night halt at hotel."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 03:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker2kkl13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Morning Kakkad Aarti/Dharshan of Saibaba and visit other places of \nDwarakamai, \nChavadi, \nLendi Garden, \nSai Museum and \nGurusthan."/>
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="After breakfast, starting from Shirdi 10.00 a.m and drive to Nasik."/>
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Having Darshan of Thriyambageshwar Temple."/>
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Visit the places of \nPanchavati, \nKapaleshwar Temple, \nKalaram and \nGoraram Temple and Sita Guha. \nNight halt at Shirdi."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 04:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_marker213kj"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="20sp"
+                                    android:text="Starting from Shirdi at 2.00 pm and drive to Pune Railway station and on the way visiting \nShanisignapoor, \nRenuka Devi and \nMaha Ganapathi Temple."/>
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:text="Reaching Pune Railway station at night 09.00 pm."/>
+
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 05:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_markerkjj"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textSize="20sp"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:text="Departure from Pune Railway Station at 1.35 a.m."/>
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+                        <!--<Button-->
+                            <!--android:layout_weight="3"-->
+                            <!--android:layout_gravity="center"-->
+                            <!--android:layout_width="match_parent"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="Day 06:"/>-->
+                        <com.github.vipulasri.timelineview.TimelineView
+                            android:id="@+id/time_markerlll"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            app:markerSize="15dp"
+                            app:lineSize="2dp"
+                            app:line="@color/colorPrimary"
+                            app:linePadding="1dp"/>
+                        <android.support.v7.widget.CardView
+                            android:layout_marginTop="15dp"
+                            android:layout_marginBottom="15dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:padding="5dp"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="sans-serif-condensed"
+                                    android:textColor="@color/colorPrimaryDark"
+                                    android:textSize="20sp"
+                                    android:text="Arrival at Coimbatore Railway station at 7.00 a.m."/>
+                            </LinearLayout>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <Button
+                    android:onClick="about"
+                    android:layout_gravity="center"
+                    android:textColor="@color/white"
+                    style="?android:textAppearanceSmall"
+                    android:background="@color/colorPrimary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Contact us"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+    </LinearLayout>
+
+</ScrollView>

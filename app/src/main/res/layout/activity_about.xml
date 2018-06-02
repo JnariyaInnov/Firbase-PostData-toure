@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/bgg"
+    android:layout_height="match_parent"
+    tools:context="com.karthi.sathguru.AboutActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_margin="3dp"
+            app:cardElevation="5dp"
+            android:layout_marginBottom="7dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/logo_id"
+                    android:layout_width="110dp"
+                    android:layout_height="120dp"
+                    android:elevation="4dp"
+                    android:src="@drawable/sathguru"/>
+
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sathguru"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textStyle="bold"
+                    android:textSize="30sp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="Tours and Travels"
+                    android:textSize="25sp"
+                    android:fontFamily="sans-serif-smallcaps"
+                    />
+                <TextView
+                    android:id="@+id/name3_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="16/37, Sathivinayagar kovil streat,"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Vinayagapuram,"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#000"
+                    android:text="Ambattur, Chennai"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Tamil Nadu-600053"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:layout_gravity="center"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/colorAccent"
+                    android:onClick="phoneSathguru"
+                    android:text="+919962102056"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:layout_gravity="center"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/colorAccent"
+                    android:onClick="mailSathguru"
+                    android:text="admin@sathgurutours.com"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:layout_gravity="center"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/colorAccent"
+                    android:onClick="webSathguru"
+                    android:text="sathgurutours.com"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_margin="5dp"
+            android:layout_width="match_parent"
+            app:cardElevation="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="App designed by,"/>
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/logobezzie111"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:layout_gravity="center"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/colorAccent"
+                    android:onClick="mailSathguru"
+                    android:text="admin@bezzietech.com"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:layout_gravity="center"
+                    android:fontFamily="monospace"
+                    android:textColor="@color/colorAccent"
+                    android:onClick="phoneBezzietech"
+                    android:text="+917010894452"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Base.Widget.AppCompat.Button.Borderless"
+                    android:layout_gravity="center"
+                    android:fontFamily="monospace"
+                    android:onClick="webBezzietech"
+                    android:text="bezzetech.com"/>
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+
+    <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_marginTop="15dp"-->
+            <!--android:layout_marginBottom="15dp"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content">-->
+        <!---->
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:padding="4dp"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<TextView-->
+                    <!--android:padding="5dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="25sp"-->
+                    <!--android:fontFamily="sans-serif-smallcaps"-->
+                    <!--android:textColor="@color/colorPrimaryDark"-->
+                    <!--android:text="Note:"/>-->
+
+                <!--<TextView-->
+                    <!--android:padding="5dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:text="1. A/C luxury Bus/Car pickup and drop to Mumbai Airport."/>-->
+
+                <!--<TextView-->
+                    <!--android:padding="5dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:text="2. Two night stay at Shirdi in A/C Dlx room"/>-->
+
+                <!--<TextView-->
+                    <!--android:padding="5dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:text="3. Tamil / English speaking guide for the entire trip."/>-->
+
+                <!--<TextView-->
+                    <!--android:padding="5dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:text="4. Everybody must bring Original ID Proof."/>-->
+
+                <!--<TextView-->
+                    <!--android:padding="5dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:text="5. VIP Dharshan (As per availability)."/>-->
+
+                <!--<TextView-->
+                    <!--android:padding="5dp"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textSize="20sp"-->
+                    <!--android:text="6. Please be at Airport 2 hours before the departure time."/>-->
+
+            <!--</LinearLayout>-->
+        <!--</android.support.v7.widget.CardView>-->
+
+</ScrollView>

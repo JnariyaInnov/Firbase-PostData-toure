@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_action_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Timeline" />
+        <item
+            android:id="@+id/nav_temple_details"
+            android:icon="@drawable/ic_action_temple_details"
+            android:title="Temple details" />
+        <item
+            android:id="@+id/nav_upload"
+            android:icon="@drawable/ic_menu_upload"
+            android:title="Sai News upload" />
+        <!--<item-->
+            <!--android:id="@+id/nav_temp_details_upload"-->
+            <!--android:icon="@drawable/ic_action_tempdetup"-->
+            <!--android:title="Temple details upload" />-->
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_action_profile"
+            android:title="Setting" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <!--<item-->
+                <!--android:id="@+id/nav_share"-->
+                <!--android:icon="@drawable/ic_menu_share"-->
+                <!--android:title="Share" />-->
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_action_about"
+                android:title="About" />
+        </menu>
+    </item>
+
+</menu>
