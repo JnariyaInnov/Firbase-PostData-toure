@@ -16,10 +16,10 @@
             android:id="@+id/nav_temple_details"
             android:icon="@drawable/ic_action_temple_details"
             android:title="Temple details" />
-        <item
-            android:id="@+id/nav_upload"
-            android:icon="@drawable/ic_menu_upload"
-            android:title="Sai News upload" />
+        <!--<item-->
+            <!--android:id="@+id/nav_upload"-->
+            <!--android:icon="@drawable/ic_menu_upload"-->
+            <!--android:title="Sai News upload" />-->
         <!--<item-->
             <!--android:id="@+id/nav_temp_details_upload"-->
             <!--android:icon="@drawable/ic_action_tempdetup"-->

@@ -14,18 +14,20 @@ public class TempUp {
     private String mKey;
     private String mSomething;
     private String mDate;
+    private String mProImg;
 
     public TempUp() {
         //empty constructor needed
     }
 
 
-    public TempUp(String name, String email, String something, String date, String imageUrl) {
+    public TempUp(String name, String email, String something, String date, String imageUrl, String proImg) {
         mName=name;
         mEmail = email;
         mDate = date;
         mSomething = something;
         mImageUrl = imageUrl;
+        mProImg = proImg;
     }
 
     public String getmName() {
@@ -66,6 +68,14 @@ public class TempUp {
 
     public void setmDate(String mDate) {
         this.mDate = mDate;
+    }
+
+    public String getmProImg() {
+        return mProImg;
+    }
+
+    public void setmProImg(String mProImg) {
+        this.mProImg = mProImg;
     }
 
 

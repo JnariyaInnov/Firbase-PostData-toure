@@ -12,50 +12,55 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-        <EditText
+        <TextView
             android:layout_marginTop="15dp"
             android:id="@+id/text_name"
             android:layout_width="wrap_content"
-            android:hint="Your name"
+            android:text="user name"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/nunito_semibold"
+            android:textColor="#000000"
+            android:textSize="20sp"
             android:layout_height="wrap_content"/>
 
-        <Button
-            android:layout_marginTop="15dp"
-            android:id="@+id/button_choose_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/text_name"
-            android:layout_alignBottom="@+id/text_name"
-            android:background="@color/colorPrimaryDark"
-            android:layout_alignParentEnd="true"
-            android:textColor="@android:color/white"
-            android:text="Choose img" />
         <EditText
             android:id="@+id/edit_text_descp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/button_choose_image"
+            android:layout_below="@id/text_name"
             android:hint="Write something..." />
+        <ImageButton
+            android:layout_marginTop="15dp"
+            android:id="@+id/button_choose_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/edit_text_descp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/upload_btn"/>
 
-        <ImageView
-            android:id="@+id/image_view"
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_below="@id/edit_text_descp" />
-
-        <ProgressBar
-            android:id="@+id/progress_bar"
-            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/upload_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/button_upload"
-            android:layout_alignParentStart="true" />
+            android:layout_below="@+id/button_choose_image"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"/>
+
+        <!--<ProgressBar-->
+        <!--android:id="@+id/progress_bar"-->
+        <!--android:layout_below="@id/upload_list"-->
+        <!--style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content" />-->
 
         <Button
             android:id="@+id/button_upload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/image_view"
+            android:layout_below="@id/upload_list"
             android:layout_centerHorizontal="true"
             android:textColor="@android:color/white"
             android:background="@color/colorPrimaryDark"

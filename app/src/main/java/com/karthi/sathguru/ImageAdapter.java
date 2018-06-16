@@ -5,19 +5,26 @@ package com.karthi.sathguru;
  */
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
+import android.util.Log;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 
 public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHolder> {
@@ -42,9 +49,10 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         holder.textViewName.setText(uploadCurrent.getmName());
         holder.textViewSomething.setText(uploadCurrent.getmSomething());
         holder.textViewDate.setText(uploadCurrent.getmDate());
+        Picasso.get().load(uploadCurrent.getmProImg()).placeholder(R.drawable.user).into(holder.blogProfile);
         Picasso.get()
                 .load(uploadCurrent.getImageUrl())
-                .placeholder(R.mipmap.ic_launcher)
+                .placeholder(R.drawable.loading)
                 .fit()
                 .centerCrop()
                 .into(holder.imageView);
@@ -61,6 +69,7 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         TextView textViewSomething;
         ImageView imageView;
         TextView textViewDate;
+        CircleImageView blogProfile;
 
         ImageViewHolder(View itemView) {
             super(itemView);
@@ -69,7 +78,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
             imageView = itemView.findViewById(R.id.image_view_upload);
             textViewSomething = itemView.findViewById(R.id.text_something);
             textViewDate = itemView.findViewById(R.id.text_view_date);
+            blogProfile = itemView.findViewById(R.id.blog_user_image);
 
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
         }
@@ -78,9 +89,9 @@ public class ImageAdapter extends RecyclerView.Adapter<ImageAdapter.ImageViewHol
         public void onClick(View v) {
             if (mListener != null) {
                 int position = getAdapterPosition();
-//                if (position != RecyclerView.NO_POSITION) {
-//                    mListener.onItemClick(position);
-//                }
+                if (position != RecyclerView.NO_POSITION) {
+                    mListener.onItemClick(position);
+                }
             }
         }
 

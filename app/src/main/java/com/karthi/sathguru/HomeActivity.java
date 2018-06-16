@@ -3,11 +3,15 @@ package com.karthi.sathguru;
 import android.app.TabActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.AppCompatImageView;
 import android.text.Html;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -19,12 +23,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
+import com.squareup.picasso.Picasso;
 
 public class HomeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,6 +46,11 @@ public class HomeActivity extends AppCompatActivity
     TextView tv1car,tv1bus,tv1flight,tv1train,tv1room;
     TextView tv2car,tv2bus,tv2flight,tv2train,tv2room;
     int ccar=0,cbus=0,cflight=0,ctrain=0,croom=0;
+    private FirebaseAuth auth;
+    String usName,usEmail,usUid;
+    Uri usPhotoUrl;
+    EditText userInput;
+    boolean emailVerified;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +58,30 @@ public class HomeActivity extends AppCompatActivity
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            // Name, email address, and profile photo Url
+             usName = user.getDisplayName();
+             usEmail = user.getEmail();
+             usPhotoUrl = user.getPhotoUrl();
+             emailVerified = user.isEmailVerified();
+             usUid = user.getUid();
+        }
+
+
+
+//        if(usName == "") {
+//            namepopup();
+//        }
+
+//        AppCompatImageView iv=findViewById(R.id.logo_id);
+//        String i="http://d1rwqyflb8a4eu.cloudfront.net/saibaba.jpg";
+//        iv.setImageURI(Uri.parse(i));
+//
+//        Picasso.get().load(usPhotoUrl).into(iv);
+//        TextView ts = findViewById(R.id.sample);
+//        ts.setText("hj");
 
         TextView but=findViewById(R.id.button);
         but.setText(Html.fromHtml("<u>View Packages >></u>"));
@@ -149,23 +190,7 @@ public class HomeActivity extends AppCompatActivity
             startActivity(intent);
             return true;
 
-        } else if (id == R.id.nav_upload) {
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
-            Intent intent = new Intent(HomeActivity.this, UploadActivity.class);
-            startActivity(intent);
-            return true;
-
-        }
-//        else if (id == R.id.nav_temp_details_upload) {
-//            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//            drawer.closeDrawer(GravityCompat.START);
-//            Intent intent = new Intent(HomeActivity.this, TempUpActivity.class);
-//            startActivity(intent);
-//            return true;
-//
-//        }
-            else if (id == R.id.nav_temple_details) {
+        } else if (id == R.id.nav_temple_details) {
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
             Intent intent = new Intent(HomeActivity.this, TemgalActivity.class);
@@ -326,4 +351,64 @@ public class HomeActivity extends AppCompatActivity
         Intent intent = new Intent(HomeActivity.this, PackageActivity.class);
         startActivity(intent);
     }
+
+//    public void namepopup(){
+//
+//
+//            final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//            // get prompts.xml view
+//            LayoutInflater li = LayoutInflater.from(this);
+//            View promptsView = li.inflate(R.layout.custom, null);
+//
+//            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+//                    this);
+//
+//            // set prompts.xml to alertdialog builder
+//            alertDialogBuilder.setView(promptsView);
+//
+//            userInput = (EditText) promptsView
+//                    .findViewById(R.id.editTextDialogUserInput);
+//
+//            // set dialog message
+//            alertDialogBuilder
+//                    .setCancelable(false)
+//                    .setPositiveButton("OK",
+//                            new DialogInterface.OnClickListener() {
+//                                public void onClick(DialogInterface dialog,int id) {
+//                                    // get user input and set it to result
+//                                    // edit text
+//                                    UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+//                                            .setDisplayName(userInput.getText().toString())
+//                                            .build();
+//
+//                                    user.updateProfile(profileUpdates)
+//                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+//                                                @Override
+//                                                public void onComplete(@NonNull Task<Void> task) {
+//                                                    if (task.isSuccessful()) {
+//                                                        Toast.makeText(HomeActivity.this, "Name Changed!", Toast.LENGTH_SHORT).show();
+//
+//
+//                                                    }
+//                                                }
+//                                            });
+//                                }
+//                            })
+//                    .setNegativeButton("Cancel",
+//                            new DialogInterface.OnClickListener() {
+//                                public void onClick(DialogInterface dialog,int id) {
+//                                    dialog.cancel();
+//                                }
+//                            });
+//
+//            // create alert dialog
+//            AlertDialog alertDialog = alertDialogBuilder.create();
+//
+//            // show it
+//            alertDialog.show();
+//
+//
+//    }
+
+
 }

@@ -15,6 +15,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by karthikeyansekar on 02/06/18.
  */
@@ -41,9 +43,10 @@ public class TempimgAdapter extends RecyclerView.Adapter<TempimgAdapter.ImageVie
         holder.textViewName.setText(temple.getmName());
         holder.textViewSomething.setText(temple.getmSomething());
         holder.textViewDate.setText(temple.getmDate());
+        Picasso.get().load(temple.getmProImg()).placeholder(R.drawable.user).into(holder.blogProfile);
         Picasso.get()
                 .load(temple.getImageUrl())
-                .placeholder(R.mipmap.ic_launcher)
+                .placeholder(R.drawable.loading)
                 .fit()
                 .centerCrop()
                 .into(holder.imageView);
@@ -60,6 +63,7 @@ public class TempimgAdapter extends RecyclerView.Adapter<TempimgAdapter.ImageVie
         TextView textViewSomething;
         ImageView imageView;
         TextView textViewDate;
+        CircleImageView blogProfile;
 
         ImageViewHolder(View itemView) {
             super(itemView);
@@ -68,6 +72,7 @@ public class TempimgAdapter extends RecyclerView.Adapter<TempimgAdapter.ImageVie
             imageView = itemView.findViewById(R.id.image_view_upload);
             textViewSomething = itemView.findViewById(R.id.text_something);
             textViewDate = itemView.findViewById(R.id.text_view_date);
+            blogProfile = itemView.findViewById(R.id.blog_user_image);
 
             itemView.setOnClickListener(this);
             itemView.setOnCreateContextMenuListener(this);
@@ -85,30 +90,30 @@ public class TempimgAdapter extends RecyclerView.Adapter<TempimgAdapter.ImageVie
 
         @Override
         public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-            menu.setHeaderTitle("Confirm delete ?");
-            MenuItem doWhatever = menu.add(Menu.NONE, 1, 1, "Not now!");
-            MenuItem delete = menu.add(Menu.NONE, 2, 2, "Delete");
-
-            doWhatever.setOnMenuItemClickListener(this);
-            delete.setOnMenuItemClickListener(this);
+//            menu.setHeaderTitle("Confirm delete ?");
+//            MenuItem doWhatever = menu.add(Menu.NONE, 1, 1, "Not now!");
+//            MenuItem delete = menu.add(Menu.NONE, 2, 2, "Delete");
+//
+//            doWhatever.setOnMenuItemClickListener(this);
+//            delete.setOnMenuItemClickListener(this);
         }
 
         @Override
         public boolean onMenuItemClick(MenuItem item) {
-            if (tListener != null) {
-                int position = getAdapterPosition();
-                if (position != RecyclerView.NO_POSITION) {
-
-                    switch (item.getItemId()) {
-                        case 1:
-                            tListener.onWhatEverClick(position);
-                            return true;
-                        case 2:
-                            tListener.onDeleteClick(position);
-                            return true;
-                    }
-                }
-            }
+//            if (tListener != null) {
+//                int position = getAdapterPosition();
+//                if (position != RecyclerView.NO_POSITION) {
+//
+//                    switch (item.getItemId()) {
+//                        case 1:
+//                            tListener.onWhatEverClick(position);
+//                            return true;
+//                        case 2:
+//                            tListener.onDeleteClick(position);
+//                            return true;
+//                    }
+//                }
+//            }
             return false;
         }
     }

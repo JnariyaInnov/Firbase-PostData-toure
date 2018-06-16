@@ -12,18 +12,20 @@ public class Upload {
     private String mKey;
     private String mSomething;
     private String mDate;
+    private String mProImg;
 
     public Upload() {
         //empty constructor needed
     }
 
 
-    public Upload(String name, String email, String something, String date, String imageUrl) {
+    public Upload(String name, String email, String something, String date, String imageUrl, String proImg) {
         mName=name;
         mEmail = email;
         mDate = date;
         mSomething = something;
         mImageUrl = imageUrl;
+        mProImg = proImg;
     }
 
     public String getmName() {
@@ -64,6 +66,14 @@ public class Upload {
 
     public void setmDate(String mDate) {
         this.mDate = mDate;
+    }
+
+    public String getmProImg() {
+        return mProImg;
+    }
+
+    public void setmProImg(String mProImg) {
+        this.mProImg = mProImg;
     }
 
 

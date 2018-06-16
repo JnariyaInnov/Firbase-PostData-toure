@@ -1,19 +1,26 @@
 package com.karthi.sathguru;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -25,8 +32,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class GalleryActivity extends AppCompatActivity
@@ -42,6 +51,9 @@ public class GalleryActivity extends AppCompatActivity
     private ValueEventListener mDBListener;
 
     private List<Upload> mUploads;
+
+    private com.github.clans.fab.FloatingActionButton fab1,fab2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,16 +61,26 @@ public class GalleryActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                Snackbar.make(view, "Working on it!", Snackbar.LENGTH_LONG)
-////                        .setAction("Action", null).show();
+        fab1 = findViewById(R.id.menu_itemg1);
+        fab2 = findViewById(R.id.menu_itemg2);
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Snackbar.make(view, "Working on it!", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+                Intent intent = new Intent(GalleryActivity.this, UploadActivity.class);
+                startActivity(intent);
+            }
+        });
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Working on it!", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
 //                Intent intent = new Intent(GalleryActivity.this, UploadActivity.class);
 //                startActivity(intent);
-//            }
-//        });
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -76,6 +98,7 @@ public class GalleryActivity extends AppCompatActivity
         mProgressCircle = findViewById(R.id.progress_circle);
 
         mUploads = new ArrayList<>();
+        Collections.reverse(mUploads);
 
         mAdapter = new ImageAdapter(GalleryActivity.this, mUploads);
 
@@ -167,14 +190,6 @@ public class GalleryActivity extends AppCompatActivity
             drawer.closeDrawer(GravityCompat.START);
 
         }
-//        else if (id == R.id.nav_temp_details_upload) {
-//            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-//            drawer.closeDrawer(GravityCompat.START);
-//            Intent intent = new Intent(GalleryActivity.this, TempUpActivity.class);
-//            startActivity(intent);
-//            return true;
-//
-//        }
         else if (id == R.id.nav_temple_details) {
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
@@ -182,18 +197,10 @@ public class GalleryActivity extends AppCompatActivity
             startActivity(intent);
             return true;
 
-        } else if (id == R.id.nav_upload) {
+        } else if (id == R.id.nav_profile) {
             DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
             drawer.closeDrawer(GravityCompat.START);
-            Intent intent = new Intent(GalleryActivity.this, UploadActivity.class);
-            startActivity(intent);
-            return true;
-
-        }
-        else if (id == R.id.nav_profile) {
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            drawer.closeDrawer(GravityCompat.START);
-            Intent intent = new Intent(GalleryActivity.this, ProfieGettingActivity.class);
+            Intent intent = new Intent(GalleryActivity.this, ProSettingsActivity.class);
             startActivity(intent);
             return true;
 
@@ -224,6 +231,34 @@ public class GalleryActivity extends AppCompatActivity
     @Override
     public void onItemClick(int position) {
         //Toast.makeText(this, "Normal click at position: " + position, Toast.LENGTH_SHORT).show();
+        Upload uploadCurrent = mUploads.get(position);
+        String name = uploadCurrent.getmName();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(name);
+        ImageView image = new ImageView(this);
+        //image.setImageURI(Uri.parse(uploadCurrent.getImageUrl()));
+        Picasso.get()
+                .load(uploadCurrent.getImageUrl())
+                .placeholder(R.drawable.loading)
+                .into(image);
+        builder.setView(image);
+
+        //builder.setView(input);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+
+        builder.show();
     }
 
     @Override
